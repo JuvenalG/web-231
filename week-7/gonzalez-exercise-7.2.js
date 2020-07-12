@@ -22,6 +22,10 @@
   5 Alexander Bell Business Analyst
 */
 
+//header
+const header = require('../week-2/gonzalez-header');
+console.log(header.display("Juvenal", "Gonzalez", "Exercise 7.2"));
+
 //constructor specifies what each parameter will be assigned to
 function Employee(id, firstName, lastName, title){
   this.id = id;
