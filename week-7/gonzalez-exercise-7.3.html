@@ -1,15 +1,69 @@
+<!--/*
+============================================
+; Title:  gonzalez-discussion-7.3
+; Author: Juvenal Gonzalez
+; Date:   12 July 2020
+; Description: Create a table with document.write() and one using innerHTML
+;===========================================
+*/ -->
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Exercise 7.3</title>
-
-  <!-- you will need to the href to point to your root directories css file -->
-  <link rel="stylesheet" href="/path/to/your/root/css/file">
+  <!-- you will need to tde href to point to your root directories css file -->
+  <link rel="stylesheet" href="../site.css">
 </head>
 <body>
 
+
+
+
+
+<h1>Shopping List V.1</h1>
+<!--document.write directly outputs the created list -->
+<script>
+  document.write("<ol><li>Oranges</li><li>Apples</li><li>Pears</li><li>Limes</li><li>Lemons</li></ol>")
+</script>
+<h1>Shopping List V.2</h1>
 <div id="list"></div>
+<!--innerHTML passes this table value to the div element named list -->
+<script>
+document.getElementById("list").innerHTML = "<table>" +
+  "<tr>" +
+    "<th>id</th>" +
+    "<th>item</th>" +
+  "</tr> " +
+  "<tr>" +
+    "<td>1</td>" +
+    "<td>Oranges</td>" +
+  "</tr>" +
+  "<tr>" +
+    "<td>2</td>" +
+    "<td>Apples</td>" +
+  "</tr>" +
+  "<tr>" +
+    "<td>3</td>" +
+    "<td>Pears</td>" +
+  "</tr>" +
+  "<tr>" +
+    "<td>4</td>" +
+    "<td>Limes</td>" +
+  "</tr>" +
+  "<tr>" +
+    "<td>5</td>" +
+    "<td>lemons</td>" +
+  "</tr>" +
+  "</table> "
+</script>
+
+
+
 
 </body>
 </html>

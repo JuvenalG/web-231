@@ -1,3 +1,12 @@
+<!--/*
+============================================
+; Title:  gonzalez-discussion-7.4
+; Author: Juvenal Gonzalez
+; Date:   12 July 2020
+; Description: Create an html table that alerts when an href row data field is clicked upon
+;===========================================
+*/ -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +14,49 @@
   <title>Assignment 7.4</title>
 
   <!-- you will need to the href to point to your root directories css file -->
-  <link rel="stylesheet" href="/path/to/your/root/css/file">
+  <link rel="stylesheet" href="..//site.css">
 
 </head>
-<body>
+<body> <!--Table Column Titles -->
+<table>
+<tr>
+ <th>Id</th>
+ <th>Name</th>
+ <th>Amount</th>
+ <th>Functions</th>
+</tr>
+<tr>  <!-- Table row by row -->
+  <td>1</td>
+  <td>Laptop</td>
+  <td>1,500.99</td> <!--href a tag with javascript alert -->
+  <td><a href="javascript:alert('1')">Edit</a>|<a href="javascript:alert('Are you sure?')">Delete</a></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Motherboard</td>
+  <td>35.70</td>
+  <td><a href="javascript:alert('2')">Edit</a>|<a href="javascript:alert('Are you sure?')">Delete</a></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Monitor</td>
+  <td>174.99</td>
+  <td><a href="javascript:alert('3')">Edit</a>|<a href="javascript:alert('Are you sure?')">Delete</a></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Mouse</td>
+  <td>13.99</td>
+  <td><a href="javascript:alert('4')">Edit</a>|<a href="javascript:alert('Are you sure?')">Delete</a></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Keyboard</td>
+  <td>14.50</td>
+  <td><a href="javascript:alert('5')">Edit</a>|<a href="javascript:alert('Are you sure?')">Delete</a></td>
+</tr>
 
+
+</table>
 </body>
 </html>
