@@ -1,16 +1,29 @@
-var fruits = [
-  {id: 1, fruit: "strawberry"},
-  {id: 2, fruit: "peach"},
-  {id: 3, fruit: "grape"},
-  {id: 4, fruit: "apple"},
+var employee = [
+  {id: 1, firstName: "Bob", lastName: "Lezowzky", title: "HR Manager"},
+  {id: 2, firstName: "Harold", lastName: "Kumar", title: "Custodian"},
+  {id: 3, firstName: "Lucy", lastName: "Mcdabber", title: "Accountant"},
+  {id: 4, firstName: "Stacy", lastName: "Dash", title: "Loss Prevention"},
+  {id: 5, firstName: "Rhonda", lastName: "Lucille", title: "CEO"},
   ]
 
-  var out = '';
-
-  fruits.forEach(function(fruits){
-  out += '<li>' + "ID: " + fruits.id + " Fruit: " + fruits.fruit  + '</li>';
+function getEmployee(input){
+  employee.forEach(element => {
+    if (element.id == input)
+         {//alert("Match");
+         console.log('match');
+        }
   });
+}
 
-  out = '<ul>' +  out + '</ul>';
+var output = "<table></table>"
 
-  $("p").css("background-color")
+employee.forEach(element => {
+  $( "li" ).prepend( $( "<tr><th> Title</th></tr>" ) );
+});
+
+
+
+
+
+
+//<tr><td></td><td></td></tr><tr><td></td><td></td></tr>

@@ -1,0 +1,42 @@
+https://github.com/dawross/web-231/blob/master/week-8/ross-discussion-8.1.html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discussion 8.1</title>
+  </head>
+  <body>
+    <!-- ============================================
+    ; Title: Discussion 8.1
+    ; Author: Dan Ross
+    ; Date: 15 July 2020;
+    ; Description: DOM Manipulation (jQuery)
+    ;=========================================== -->
+
+    <h1>Don't click this button</h1>
+    <button>DON'T PUSH ME!</button>
+    <div id="nick" style="display: none;">
+      <img src="https://i.ytimg.com/vi/JrQkgLLL9XQ/hqdefault.jpg" alt="Nick" />
+    </div>
+    <!-- jQuery cdn  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      //this script has 2 errors
+      // removed $(function () { as it does not follow any syntax
+        //toggles image on click of button
+        //Function was missing a parenthesis
+        $(".button").click(function () {
+          $("#nick").toggle("slow", function () {
+            alert("Why?");
+          });
+          //toggles button text
+          $(this).text(function (i, text) {
+            return text == "PUSH ME" ? "DON'T PUSH ME!" : "PUSH ME!";
+          });
+        });
+     // }); Removed
+    </script>
+  </body>
+</html>
