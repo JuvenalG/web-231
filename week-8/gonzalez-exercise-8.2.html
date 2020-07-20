@@ -1,0 +1,60 @@
+<!---- ===========================================
+; Title: Assignment 8.2
+; Author: Professor Krasso
+; Date: 19 July 2020
+; Modified By: Juvenal Gonzalez
+; Description: Output an arrays properties onto a table that is inserted with javascript and
+;              adjust the css properties with javascript
+;=========================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 8.2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style type="text/css">
+    ul {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="fruits"></div>
+<!--Array with fruit objects-->
+<script>
+var fruits = [
+  {id: 1, fruit: "strawberry "},
+  {id: 2, fruit: "peach "},
+  {id: 3, fruit: "grape "},
+  {id: 4, fruit: "apple "},
+  ]
+
+  var out = '';
+//for each loop that grabs the arrays properties and stores them into a variable
+  fruits.forEach(function(fruits){
+  out += '<li>' + " ID: " + fruits.id + " Fruit: " + fruits.fruit  + '</li>';
+  });
+
+  out = '<ul>' +  out + '</ul>';
+ //variable with table containing array properties will insert into the fruits div tag
+  document.getElementById("fruits").innerHTML = out;
+  //Adds title to each li tag
+  $( "li" ).prepend( $( "<tr><th> Title</th></tr>" ) );
+  //Change background color
+  $("#fruits").css("background-color", "Red");
+  //center body
+  $("body").css("margin", "0 auto");
+  //makes li tag align horizontally to create a topbar
+  $("li").css("display", "inline");
+  //font and weight styling
+  $("body").css("font-family", "Roboto");
+  $("body").css("font-weight", "300,400,500");
+  //brings ul 20px lower
+  $("#fruits").css("padding-top", "20px");
+00
+</script>
+
+</body>
+</html>
