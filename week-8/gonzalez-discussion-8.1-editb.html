@@ -11,7 +11,8 @@ https://github.com/dawross/web-231/blob/master/week-8/ross-discussion-8.1.html
     <!-- ============================================
     ; Title: Discussion 8.1
     ; Author: Dan Ross
-    ; Date: 15 July 2020;
+    ; Date: 19 July 2020;
+    ; Modified by: Juvenal Gonzalez
     ; Description: DOM Manipulation (jQuery)
     ;=========================================== -->
 
@@ -27,7 +28,7 @@ https://github.com/dawross/web-231/blob/master/week-8/ross-discussion-8.1.html
       // removed $(function () { as it does not follow any syntax
         //toggles image on click of button
         //Function was missing a parenthesis
-        $(".button").click(function () {
+        $("button").click(function () { //.button had an unnecessary period that is used for class selectors
           $("#nick").toggle("slow", function () {
             alert("Why?");
           });

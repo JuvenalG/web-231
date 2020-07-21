@@ -1,0 +1,68 @@
+<!--/*
+============================================
+; Title:  gonzalez assignment 8.4
+; Author: Professor Krasso
+; Date:   20 July 2020
+; Modified by: Juvenal Gonzalez
+; Description: Create a toggle button that will hide and show a paragraphs text
+;              and output the selected table rows data onto an alert dialogue
+;===========================================
+*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Exercise 8.3</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- you will need to the href to point to your root directories css file -->
+  <link rel="stylesheet" href="../site.css">
+
+</head>
+<body>
+
+<script>
+
+//Paragraph tag added to body
+$("body").append("<p></p>");
+//Paragraph text added
+    $("p").append("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultricies elementum lectus, a pretium dolor imperdiet eget. Aliquam at purus massa. Nullam euismod massa eu urna fringilla, interdum malesuada massa imperdiet. Curabitur non lectus vel nibh laoreet venenatis. Vivamus magna purus, eleifend sed vestibulum eget, vulputate et elit. Nullam a arcu eleifend, interdum enim a, posuere odio. Proin ut feugiat justo. Nunc id nibh nibh");
+    //title added with h1 tag
+    $("body").prepend("<h1>Title</h1>");
+    //toggle button tag with id selector
+    $("body").append("<button id='toggle'>Toggle</button>");
+    //toggle onclick hides or reappears the p tag
+    $(function () {
+    $("#toggle").click(function () {
+      $("p").toggle();
+     })
+     });
+//table to inserted in tag
+ output = "<table><tr><th>Id</th><th>Type</th></tr><tr><td>1</td><td>Mango</td></tr><tr><td>2</td><td>Orange</td></tr><tr><td>3</td><td>Grape</td></tr><tr><td>4</td><td>Guava</td></tr><tr><td>5</td><td>Papaya</td></tr></table>"
+ $("body").append(output);
+//displays both data fields to alert dialogue
+ $("td").click(function(){
+  var a = $(this).text() + " " + $(this).next().text();
+      alert(a);
+});
+//Roboto font styling
+document.body.style.fontFamily = "Roboto";
+//Font weight added to body
+document.body.style.fontWeight = "500";
+//Every alternate row is colored either pink or red
+$("tr:even").css("background-color", "red");
+$("tr:odd").css("background-color", "pink");
+//hr creates a line above the title styled red and given a height of 20px
+$("body").prepend("<hr></hr>");
+$("hr").css("background-color", "red");
+$("hr").css("height", "20px");
+//top padding allows the sections to appear 20px below topbar
+$("h1").css("padding-top", "20px");
+$("h1").css("padding-left", "20px");//Both title and paragraph 20px to the right
+$("p").css("padding-left", "20px");
+</script>
+
+</body>
+</html>

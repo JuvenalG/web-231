@@ -1,3 +1,12 @@
+<!--/*
+============================================
+; Title:  gonzalez assignment 8.4
+; Author: Professor Krasso
+; Date:   20 July 2020
+; Modified by: Juvenal Gonzalez
+; Description: Insert an array as a table into an html tag, and output the clicked upon row's data onto the alert dialogue
+;===========================================
+*/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,15 +29,47 @@
 
 <div id="emps"></div>
 
-<script type="text/javascript">
 
-  // jQuery onClick event
-  // Don't remove this, just add your code to the body of the event (curly braces)
+<script>
+  //array with 5 employee objects
+var employee = [
+  {id: 1, firstName: "Bob ", lastName: "Lezowzky", title: "HR Manager"},
+  {id: 2, firstName: "Harold ", lastName: "Kumar", title: "Custodian"},
+  {id: 3, firstName: "Lucy ", lastName: "Mcdabber", title: "Accountant"},
+  {id: 4, firstName: "Stacy ", lastName: "Dash", title: "Loss Prevention"},
+  {id: 5, firstName: "Rhonda ", lastName: "Lucille", title: "CEO"},
+  ]
+//iterates over array and stores output into employeeMatch variable
+function getEmployee(input){
+  employee.forEach(element => {
+    if (element.id == input)
+         {
+        employeeMatch =  "ID: " + element.id + " Name: " + element.firstName + element.lastName + " Title: " + element.title ;
+        }
+  });
+}
+//output variable with table
+var output = "<table><tr><th>Id</th><th>First Name</th><th>Last Name</th><th>Title</th></tr>"
+//variable to store alert output
+var employeeMatch;
+//iterates over employee array of objects and inserts rows for the table
+employee.forEach(element => {
+    output = output + "<tr><td>" + element.id + "</td><td>" + element.firstName + "</td><td>" + element.lastName + "</td><td>" + element.title + "</td></tr>";
+  });
+//ends table
+  output += "</table>";
+//inserts output string into emps html tag
+  document.getElementById("emps").innerHTML = output;
+
+
   $(function () {
     $("table tr").click(function () {
-
+       getEmployee( $( this ).find("td:first").html());//find returns the value of the clicked id column and it is used as a parameter in the getEmployee function
+       $( this ).find("td").css( "background-color", "yellow" )//turns the row a highlighted yellow
+       alert(employeeMatch);//outputs the selected row onto the alert dialogue
     })
   });
 </script>
+
 </body>
 </html>
